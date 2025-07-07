@@ -3,27 +3,27 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wdth,wght@100..125,100..700&display=swap');
 
 :root {
-  --color-primary: #5CC9B1;     
-  --color-secondary: #C7708D;   
-  --color-accent: #F0CD6E;      
+  --color-primary: #FFFFFF;     
+  --color-secondary: #22c55e;  
+  --color-tertiary: #90eeb3; 
+  --color-accent: #AAAAAA;      
   --color-background: #121212;  
 
   --color-header: #FFFFFF;     
-  --color-body: #AAAAAA;       
-  --color-link: #70B7FF;        
-  --color-link-hover: #9CD2FF;  
+  --color-body: #AAAAAA;   
+  --color-highlight: #22c55e;    
 }
 
 /** Utility classes for colors */
 .bg-primary { background-color: var(--color-primary); }
 .bg-secondary { background-color: var(--color-secondary); }
+.bg-tertiary { background-color: var(--color-tertiary); }
 .bg-accent { background-color: var(--color-accent); }
 .bg-custom { background-color: var(--color-background); }
 
 .text-header { color: var(--color-header); }
 .text-body { color: var(--color-body); }
-.text-link { color: var(--color-link); }
-.text-link-hover { color: var(--color-link-hover); }
+.text-highlight { color: var(--color-highlight); } 
 
 /* Font families */
 .m-plus-code-latin {
@@ -71,4 +71,9 @@ body {
 .arrow-down {
   color: #FFFFFF;
   margin-top: 10px;
+}
+
+.timeline-item:hover {
+  color: var(--color-tertiary);
+  scale: 1.05;
 }

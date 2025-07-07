@@ -1,10 +1,13 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import Dashboard from './components/dashboard'; 
-import ArrowDownward from './components/arrowDownward';
-import About from './components/about';
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Dashboard from "./components/dashboard";
+import ArrowDownward from "./components/downwardArrow";
+import About from "./components/about";
+import Typewriter from "./components/typewriter";
+import Timeline from "./components/timeline";
+//import CurvedArrow from "./components/curvedArrow";
 
 export default function HomePage() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -13,25 +16,25 @@ export default function HomePage() {
   const router = useRouter();
 
   const goToAbout = () => {
-    const aboutSection = document.getElementById('about');
+    const aboutSection = document.getElementById("about");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+      aboutSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
       });
-      window.history.pushState(null, '', '/#about');
+      window.history.pushState(null, "", "/#about");
     }
   };
 
   useEffect(() => {
     const handleHashNavigation = () => {
-      if (window.location.hash === '#about') {
+      if (window.location.hash === "#about") {
         setTimeout(() => {
-          const aboutSection = document.getElementById('about');
+          const aboutSection = document.getElementById("about");
           if (aboutSection) {
-            aboutSection.scrollIntoView({ 
-              behavior: 'smooth',
-              block: 'start'
+            aboutSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
           }
         }, 100);
@@ -41,10 +44,10 @@ export default function HomePage() {
     handleHashNavigation();
 
     // Listen for hash changes (back/forward browser buttons)
-    window.addEventListener('hashchange', handleHashNavigation);
-    
+    window.addEventListener("hashchange", handleHashNavigation);
+
     return () => {
-      window.removeEventListener('hashchange', handleHashNavigation);
+      window.removeEventListener("hashchange", handleHashNavigation);
     };
   }, []);
 
@@ -68,24 +71,29 @@ export default function HomePage() {
       )}
 
       {showWebsite && (
-        <div className="fade-in-website w-full">
+        <div className="fade-in-website w-full p-4">
           <Dashboard />
-          
+
           <div className="h-[30vh] md:h-[90vh] lg:h-[90vh] flex flex-col items-center justify-center text-center">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl text-header home-content">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl text-header home-content p-2">
               Hey! I am Akshara Bruno
             </h1>
-            <p className="text-sm md:text-base lg:text-lg text-body p-4">
-              MSc Computer Science student | Frontend Developer | Singer | Writer | list goes on...
-            </p>
-            <button className="cursor-pointer arrow-down animate-bounce" onClick={goToAbout}>
+
+            <Typewriter />
+
+            <button
+              className="cursor-pointer arrow-down animate-bounce md:p-8 lg:p-8 hidden md:block lg:block"
+              onClick={goToAbout}
+            >
               <ArrowDownward />
             </button>
           </div>
 
-          <div id='about'>
+          <div id="about" className="items-center justify-center flex flex-col">
             <About />
           </div>
+          {/**<CurvedArrow />*/}
+          <Timeline />
         </div>
       )}
     </div>
