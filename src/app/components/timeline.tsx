@@ -60,7 +60,7 @@ export default function Timeline() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(3);
 
   return (
-    <div className="flex flex-col justify-center px-6">
+    <div className="flex flex-col justify-center px-6 mb-8">
       <h1 className="text-2xl font-bold text-body text-left py-4">
         What have I been up to?
       </h1>

@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation";
 import Dashboard from "./components/dashboard";
 import ArrowDownward from "./components/downwardArrow";
 import About from "./components/about";
-import Typewriter from "./components/typewriter";
+import { CyclicTypewriter } from "./components/typewriter";
 import Timeline from "./components/timeline";
-//import CurvedArrow from "./components/curvedArrow";
+import Blogs from "./components/blogs";
+import Contact from "./components/contact";
 
 export default function HomePage() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -43,7 +44,6 @@ export default function HomePage() {
 
     handleHashNavigation();
 
-    // Listen for hash changes (back/forward browser buttons)
     window.addEventListener("hashchange", handleHashNavigation);
 
     return () => {
@@ -79,7 +79,7 @@ export default function HomePage() {
               Hey! I am Akshara Bruno
             </h1>
 
-            <Typewriter />
+            <CyclicTypewriter />
 
             <button
               className="cursor-pointer arrow-down animate-bounce md:p-8 lg:p-8 hidden md:block lg:block"
@@ -92,8 +92,9 @@ export default function HomePage() {
           <div id="about" className="items-center justify-center flex flex-col">
             <About />
           </div>
-          {/**<CurvedArrow />*/}
           <Timeline />
+          <Blogs />
+          <Contact />
         </div>
       )}
     </div>

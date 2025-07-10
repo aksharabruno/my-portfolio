@@ -12,6 +12,7 @@
   --color-header: #FFFFFF;     
   --color-body: #AAAAAA;   
   --color-highlight: #22c55e;    
+  --color-hover: #90eeb3;
 }
 
 /** Utility classes for colors */
@@ -23,7 +24,8 @@
 
 .text-header { color: var(--color-header); }
 .text-body { color: var(--color-body); }
-.text-highlight { color: var(--color-highlight); } 
+.text-highlight { color: var(--color-highlight) }
+.text-hover { color: var(--color-hover); } 
 
 /* Font families */
 .m-plus-code-latin {
@@ -76,4 +78,14 @@ body {
 .timeline-item:hover {
   color: var(--color-tertiary);
   scale: 1.05;
+}
+
+.blogs-section-heading {
+  scale: 20;
+  -webkit-text-stroke: 0.1px var(--color-highlight);
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-email:hover {
+  color: var(--color-hover);
 }
