@@ -2,6 +2,7 @@ import { useState } from "react";
 import timelineData from "../data/timelineData";
 import "../globals.css";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { BasicTypewriter } from "./typewriter";
 
 type TimelineItemProps = {
   year: string | number;
@@ -62,7 +63,7 @@ export default function Timeline() {
   return (
     <div className="flex flex-col justify-center px-6 mb-8">
       <h1 className="text-2xl font-bold text-body text-left py-4">
-        What have I been up to?
+        <BasicTypewriter text="What have I been upto?" />
       </h1>
       {timelineData.map(
         (

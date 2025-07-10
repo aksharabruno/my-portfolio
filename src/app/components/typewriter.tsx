@@ -1,38 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../globals.css";
 
-export const BasicTypewriter = ({ 
-  text = '',
-  speed = 100, 
-  delay = 0,
-  cursor = true,
-  onComplete = () => {},
-  className = ""
-}) => {
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
+export const BasicTypewriter = ({ text = "", className = "" }) => {
+  const [displayText, setDisplayText] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
 
+  // Simple intersection observer
   useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, currentIndex === 0 ? delay : speed);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-      return () => clearTimeout(timeout);
-    } else if (!isComplete) {
-      setIsComplete(true);
-      onComplete();
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
     }
-  }, [currentIndex, text, speed, delay, isComplete, onComplete]);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Typewriter effect
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < text.length) {
+        setDisplayText(text.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, [isVisible, text]);
 
   return (
-    <span className={className}>
+    <span ref={elementRef} className={className}>
       {displayText}
-      {cursor && (
-        <span className="animate-pulse">|</span>
-      )}
+      <span className="animate-pulse">|</span>
     </span>
   );
 };

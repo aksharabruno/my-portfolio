@@ -8,6 +8,7 @@ import { CyclicTypewriter } from "./components/typewriter";
 import Timeline from "./components/timeline";
 import Blogs from "./components/blogs";
 import Contact from "./components/contact";
+import { BasicTypewriter } from "./components/typewriter";
 
 export default function HomePage() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -51,7 +52,7 @@ export default function HomePage() {
     const timer = setTimeout(() => {
       setShowWelcome(false);
       setShowWebsite(true);
-    }, 2000);
+    }, 1700);
 
     return () => clearTimeout(timer);
   }, []);
@@ -61,7 +62,7 @@ export default function HomePage() {
       {showWelcome && (
         <div className="absolute inset-0 flex items-center justify-center bg-custom z-20">
           <h1 className="text-6xl font-bold text-body welcome-text text-header">
-            welcome
+            <BasicTypewriter text="welcome"/>
           </h1>
         </div>
       )}

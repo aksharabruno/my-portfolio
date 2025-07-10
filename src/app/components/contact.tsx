@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import {myEmailID, myLinkedIn, myInstagram, myGithub, myPhone} from "../data/contact";
+import { BasicTypewriter } from "./typewriter";
+import {
+  myEmailID,
+  myLinkedIn,
+  myInstagram,
+  myGithub,
+  myPhone,
+} from "../data/contact";
 import linkedInIcon from "../images/linkedin.svg";
 import instagramIcon from "../images/instagram.svg";
 import githubIcon from "../images/github.svg";
 import phoneIcon from "../images/phone.svg";
-
-type ContactProps = {
-  emailID: string;
-};
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -27,9 +30,13 @@ export default function Contact() {
   return (
     <div className="flex flex-col items-center w-full bg-background pt-20 mb-5">
       <div className="flex flex-row items-center">
-        <span className="text-sm md:text-lg text-header">Are you a recruiter? </span>
+        <span className="text-sm md:text-lg text-header">
+          Are you a recruiter?{" "}
+        </span>
         {"/ "}
-        <span className="text-sm md:text-lg text-highlight">Let's schedule a call :)</span>
+        <span className="text-sm md:text-lg text-highlight">
+          <BasicTypewriter text="Let's schedule a call :)" />
+        </span>
       </div>
       <div
         className="font-bold text-header contact-email mt-2 cursor-pointer text-2xl md:text-4xl"
