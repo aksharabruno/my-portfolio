@@ -70,6 +70,22 @@ body {
   animation: fade-in-website 0.5s ease-in-out forwards;
 }
 
+.name {
+    font-family: 'Doto', sans-serif;
+    font-variation-settings: "ROND" 0;
+    font-size: 1.5rem;
+}
+
+.name:hover {
+    scale: 1.05;
+}
+
+.contact-button:hover {
+    color: var(--color-highlight);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
 .arrow-down {
   color: #FFFFFF;
   margin-top: 10px;

@@ -11,6 +11,7 @@
 }
 
 .contact-button:hover {
+    color: var(--color-highlight);
     text-decoration: underline;
     text-underline-offset: 4px;
 }

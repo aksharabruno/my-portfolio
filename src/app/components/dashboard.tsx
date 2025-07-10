@@ -1,11 +1,8 @@
 "use client";
 
-import "../styles/dashboard.css";
-import { useRouter } from "next/navigation";
+import "../globals.css";
 
 export default function Dashboard() {
-  const router = useRouter();
-
   const goToAbout = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
@@ -13,7 +10,16 @@ export default function Dashboard() {
         behavior: "smooth",
         block: "start",
       });
-      window.history.pushState(null, "", "/#about");
+    }
+  };
+
+  const goToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
 
@@ -25,7 +31,10 @@ export default function Dashboard() {
       >
         aksharabruno
       </button>
-      <button className="text-body px-4 py-2 contact-button cursor-pointer">
+      <button
+        className="text-body px-4 py-2 contact-button cursor-pointer"
+        onClick={goToContact}
+      >
         contact
       </button>
     </div>

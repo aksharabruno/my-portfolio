@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import Dashboard from "./components/dashboard";
 import ArrowDownward from "./components/downwardArrow";
 import About from "./components/about";
@@ -14,8 +13,6 @@ export default function HomePage() {
   const [showWelcome, setShowWelcome] = useState(true);
   const [showWebsite, setShowWebsite] = useState(false);
 
-  const router = useRouter();
-
   const goToAbout = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
@@ -23,7 +20,6 @@ export default function HomePage() {
         behavior: "smooth",
         block: "start",
       });
-      window.history.pushState(null, "", "/#about");
     }
   };
 
@@ -94,7 +90,10 @@ export default function HomePage() {
           </div>
           <Timeline />
           <Blogs />
-          <Contact />
+
+          <div id="contact">
+            <Contact />
+          </div>
         </div>
       )}
     </div>
