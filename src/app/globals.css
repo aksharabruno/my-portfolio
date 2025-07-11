@@ -51,10 +51,6 @@ body {
   cursor: url('./images/cursor.svg'), auto;
 }
 
-body:hover {
-  cursor: url('./images/cursor.svg'), auto;
-}
-
 .welcome-text {
   font-family: 'Doto', sans-serif;
 }
@@ -75,8 +71,7 @@ body:hover {
 
 .contact-button:hover {
     color: var(--color-highlight);
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    border: 1px dashed var(--color-secondary);
 }
 
 .arrow-down {

@@ -1,6 +1,6 @@
 const timelineData = [
     {
-        year: "2018",
+        year: "2018 - 2022",
         title: "BTech in Computer Science Engineering",
         description: "Fill",
     },
@@ -10,12 +10,12 @@ const timelineData = [
         description: "Fill",
     },
     {
-        year: "2024",
+        year: "2022 - 2024",
         title: "Product Development Engineer",
         description: "Fill",
     },
     {
-        year: "2026",
+        year: "2024 - 2026",
         title: "MSc in Computer Science",
         description: "Currently pursuing a Master's degree in Computer Science at the University of Amsterdam",
     },
