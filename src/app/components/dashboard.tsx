@@ -25,14 +25,11 @@ export default function Dashboard() {
 
   return (
     <div className="flex items-center justify-between px-6 py-4 color-background shadow">
-      <button
-        className="text-xl font-bold text-body name cursor-pointer"
-        onClick={goToAbout}
-      >
+      <button className="text-xl font-bold text-body name" onClick={goToAbout}>
         aksharabruno
       </button>
       <button
-        className="text-body px-4 py-2 contact-button cursor-pointer"
+        className="text-body px-4 py-2 contact-button"
         onClick={goToContact}
       >
         contact

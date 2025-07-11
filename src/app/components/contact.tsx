@@ -39,7 +39,7 @@ export default function Contact() {
         </span>
       </div>
       <div
-        className="font-bold text-header contact-email mt-2 cursor-pointer text-2xl md:text-4xl"
+        className="font-bold text-header contact-email mt-2 text-2xl md:text-4xl"
         onClick={copyToClipboard}
       >
         aksharabruno0119@gmail.com
@@ -50,28 +50,28 @@ export default function Contact() {
           priority
           src={linkedInIcon}
           alt="Find me on LinkedIn"
-          className="cursor-pointer hover:scale-120 mx-2"
+          className="hover:scale-120 mx-2"
           onClick={() => window.open(myLinkedIn, "_blank")}
         />
         <Image
           priority
           src={instagramIcon}
           alt="Find me on Instagram"
-          className="cursor-pointer hover:scale-120 mx-2"
+          className="hover:scale-120 mx-2"
           onClick={() => window.open(myInstagram, "_blank")}
         />
         <Image
           priority
           src={githubIcon}
           alt="Find me on Github"
-          className="cursor-pointer hover:scale-120 mx-2"
+          className="hover:scale-120 mx-2"
           onClick={() => window.open(myGithub, "_blank")}
         />
         <Image
           priority
           src={phoneIcon}
           alt="Reach out to me via Phone"
-          className="cursor-pointer hover:scale-120 mx-2"
+          className="hover:scale-120 mx-2"
           onClick={copyToClipboard} //incorrect implementation; fix this
         />
       </div>

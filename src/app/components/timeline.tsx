@@ -22,7 +22,7 @@ function TimelineItem({
   return (
     <div className="flex flex-col items-start justify-start mb-8">
       <div
-        className="flex items-center mb-4 px-4 cursor-pointer"
+        className="flex items-center mb-4 px-4"
         onClick={onClick}
       >
         {isSelected ? (

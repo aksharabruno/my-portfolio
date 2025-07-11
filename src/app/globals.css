@@ -48,6 +48,11 @@
 
 body {
   font-family: var(--font-mplus-code-latin);
+  cursor: url('./images/cursor.svg'), auto;
+}
+
+body:hover {
+  cursor: url('./images/cursor.svg'), auto;
 }
 
 .welcome-text {

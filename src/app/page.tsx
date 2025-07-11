@@ -62,7 +62,7 @@ export default function HomePage() {
       {showWelcome && (
         <div className="absolute inset-0 flex items-center justify-center bg-custom z-20">
           <h1 className="text-6xl font-bold text-body welcome-text text-header">
-            <BasicTypewriter text="welcome"/>
+            <BasicTypewriter text="welcome" />
           </h1>
         </div>
       )}
@@ -79,7 +79,7 @@ export default function HomePage() {
             <CyclicTypewriter />
 
             <button
-              className="cursor-pointer arrow-down animate-bounce md:p-8 lg:p-8 hidden md:block lg:block"
+              className="arrow-down animate-bounce md:p-8 hidden md:block"
               onClick={goToAbout}
             >
               <ArrowDownward />
