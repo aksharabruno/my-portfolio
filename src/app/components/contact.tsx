@@ -72,7 +72,7 @@ export default function Contact() {
           src={phoneIcon}
           alt="Reach out to me via Phone"
           className="cursor-pointer hover:scale-120 mx-2"
-          onClick={copyToClipboard}
+          onClick={copyToClipboard} //incorrect implementation; fix this
         />
       </div>
       <p className="text-header">designed & built by yours truly</p>

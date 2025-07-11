@@ -6,7 +6,6 @@ export const BasicTypewriter = ({ text = "", className = "" }) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef(null);
 
-  // Simple intersection observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -24,7 +23,6 @@ export const BasicTypewriter = ({ text = "", className = "" }) => {
     return () => observer.disconnect();
   }, []);
 
-  // Typewriter effect
   useEffect(() => {
     if (!isVisible) return;
 
