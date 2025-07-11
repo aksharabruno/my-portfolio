@@ -9,6 +9,7 @@ import Timeline from "./components/timeline";
 import Blogs from "./components/blogs";
 import Contact from "./components/contact";
 import { BasicTypewriter } from "./components/typewriter";
+import Dot from "./components/animata/background/dot";
 
 export default function HomePage() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -58,7 +59,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-custom">
+    <div className="bg-custom">
       {showWelcome && (
         <div className="absolute inset-0 flex items-center justify-center bg-custom z-20">
           <h1 className="text-6xl font-bold text-body welcome-text text-header">
@@ -66,37 +67,45 @@ export default function HomePage() {
           </h1>
         </div>
       )}
+      <Dot
+        children={
+          <>
+            {showWebsite && (
+              <div className="fade-in-website w-full p-4">
+                <Dashboard />
 
-      {showWebsite && (
-        <div className="fade-in-website w-full p-4">
-          <Dashboard />
+                <div className="h-[30vh] md:h-[90vh] lg:h-[90vh] flex flex-col items-center justify-center text-center">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl text-header home-content p-2">
+                    Hey! I am Akshara Bruno
+                  </h1>
 
-          <div className="h-[30vh] md:h-[90vh] lg:h-[90vh] flex flex-col items-center justify-center text-center">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl text-header home-content p-2">
-              Hey! I am Akshara Bruno
-            </h1>
+                  <CyclicTypewriter />
 
-            <CyclicTypewriter />
+                  <button
+                    className="arrow-down animate-bounce md:p-8 hidden md:block"
+                    onClick={goToAbout}
+                  >
+                    <ArrowDownward />
+                  </button>
+                </div>
 
-            <button
-              className="arrow-down animate-bounce md:p-8 hidden md:block"
-              onClick={goToAbout}
-            >
-              <ArrowDownward />
-            </button>
-          </div>
+                <div
+                  id="about"
+                  className="items-center justify-center flex flex-col"
+                >
+                  <About />
+                </div>
+                <Timeline />
+                <Blogs />
 
-          <div id="about" className="items-center justify-center flex flex-col">
-            <About />
-          </div>
-          <Timeline />
-          <Blogs />
-
-          <div id="contact">
-            <Contact />
-          </div>
-        </div>
-      )}
+                <div id="contact">
+                  <Contact />
+                </div>
+              </div>
+            )}{" "}
+          </>
+        }
+      />
     </div>
   );
 }
