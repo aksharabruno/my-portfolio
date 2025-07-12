@@ -58,6 +58,16 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, []);
 
+  const [isSmallWindow, setIsSmallWindow] = useState(false);
+
+  useEffect(() => {
+    const width = window.innerWidth;
+    if (width <= 430) {
+      console.log("short");
+      setIsSmallWindow(true);
+    }
+  }, []);
+
   return (
     <div className="bg-custom">
       {showWelcome && (
@@ -96,7 +106,7 @@ export default function HomePage() {
                   <About />
                 </div>
                 <Timeline />
-                <BlogGrid />
+                <BlogGrid isSmallWindow={isSmallWindow} />
 
                 <div id="contact">
                   <Contact />

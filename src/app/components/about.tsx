@@ -7,7 +7,7 @@ export default function About() {
     <FadeUpElement
       children={
         <>
-          <div className="lg:min-w-4xl flex flex-col md:flex-row lg:flex-row items-center justify-center border border-white rounded-lg m-8 p-8 gap-6">
+          <div className="lg:min-w-4xl flex flex-col md:flex-row lg:flex-row items-center justify-center border border-white m-8 p-8 gap-6">
             <Image
               src={profileImage}
               alt="Profile picture"

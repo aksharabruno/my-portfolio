@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import blogPosts from "../data/blogPosts";
 import { FadeUpElement } from "./fadeUpElement";
 import { BasicTypewriter } from "./typewriter";
@@ -12,7 +13,7 @@ type BlogItemProps = {
 
 function BlogItem({ title, excerpt, imageName }: BlogItemProps) {
   return (
-    <div className="relative group overflow-hidden rounded-lg">
+    <div className="relative group overflow-hidden shadow-lg">
       <Image
         src={imageName}
         alt={title}
@@ -29,15 +30,21 @@ function BlogItem({ title, excerpt, imageName }: BlogItemProps) {
   );
 }
 
-export default function BlogGrid() {
-  console.log(window.innerWidth);
+export default function BlogGrid({ isSmallWindow }: any) {
+  console.log(window.innerWidth, isSmallWindow);
   return (
     <FadeUpElement
       children={
         <>
           <div className="flex flex-col md:flex-row bg-background m-8 p-6">
+            {isSmallWindow ? (
+              <div className="text-center text-highlight md:text-right lg:text-5xl md:text-4xl mx-4 my-10">
+                <BasicTypewriter text="Here's what I'm thinking" />
+              </div>
+            ) : (
+              <></>
+            )}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:min-w-3/4">
-
               {blogPosts.map(
                 (
                   item: {
@@ -58,10 +65,13 @@ export default function BlogGrid() {
                 )
               )}
             </div>
-
-            <div className="blogs-section-heading text-center text-highlight md:text-right lg:text-5xl md:text-4xl mx-4 my-10">
-              <BasicTypewriter text="Here's what I'm thinking" />
-            </div>
+            {!isSmallWindow ? (
+              <div className="text-center text-highlight md:text-right lg:text-5xl md:text-4xl mx-4 my-10">
+                <BasicTypewriter text="Here's what I'm thinking" />
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         </>
       }
