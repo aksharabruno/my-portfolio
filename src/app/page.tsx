@@ -6,7 +6,7 @@ import ArrowDownward from "./components/downwardArrow";
 import About from "./components/about";
 import { CyclicTypewriter } from "./components/typewriter";
 import Timeline from "./components/timeline";
-import Blogs from "./components/blogs";
+import BlogGrid from "./components/blogs";
 import Contact from "./components/contact";
 import { BasicTypewriter } from "./components/typewriter";
 import Dot from "./components/animata/background/dot";
@@ -96,7 +96,7 @@ export default function HomePage() {
                   <About />
                 </div>
                 <Timeline />
-                <Blogs />
+                <BlogGrid />
 
                 <div id="contact">
                   <Contact />
