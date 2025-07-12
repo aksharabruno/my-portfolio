@@ -3,6 +3,7 @@ import timelineData from "../data/timelineData";
 import "../globals.css";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { BasicTypewriter } from "./typewriter";
+import { FadeUpElement } from "./fadeUpElement";
 
 type TimelineItemProps = {
   year: string | number;
@@ -20,38 +21,46 @@ function TimelineItem({
   onClick,
 }: TimelineItemProps) {
   return (
-    <div className="flex flex-col items-start justify-start mb-8">
-      <div className="flex items-center mb-4 md:px-4" onClick={onClick}>
-        {isSelected ? (
-          <>
-            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500 animate-pulse timeline-icon">
-              <ArrowRightIcon className="w-4 h-4 text-green-500" />
+    <FadeUpElement
+      children={
+        <>
+          <div className="flex flex-col items-start justify-start mb-8">
+            <div className="flex items-center mb-4 md:px-4" onClick={onClick}>
+              {isSelected ? (
+                <>
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500 animate-pulse timeline-icon">
+                    <ArrowRightIcon className="w-4 h-4 text-green-500" />
+                  </div>
+                  <div className="flex flex-col items-start justify center px-4">
+                    <h3 className="text-highlight text-3xl font-semibold ">
+                      {title}
+                    </h3>
+                    <h4 className="text-body text-lg font-semibold ">{year}</h4>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <ArrowRightIcon className="w-4 h-6 text-body" />
+                  <div className="flex flex-col items-start justify center px-4">
+                    <h3 className="text-header text-xl timeline-item">
+                      {title}
+                    </h3>
+                    <h4 className="text-body text-lg">{year}</h4>
+                  </div>
+                </>
+              )}
             </div>
-            <div className="flex flex-col items-start justify center px-4">
-              <h3 className="text-highlight text-3xl font-semibold ">
-                {title}
-              </h3>
-              <h4 className="text-body text-lg font-semibold ">{year}</h4>
-            </div>
-          </>
-        ) : (
-          <>
-            <ArrowRightIcon className="w-4 h-6 text-body" />
-            <div className="flex flex-col items-start justify center px-4">
-              <h3 className="text-header text-xl timeline-item">{title}</h3>
-              <h4 className="text-body text-lg">{year}</h4>
-            </div>
-          </>
-        )}
-      </div>
-      {isSelected && (
-        <div>
-          <p className="text-body pl-9 md:pl-13.5 lg:max-w-3xl">
-            {description}
-          </p>
-        </div>
-      )}
-    </div>
+            {isSelected && (
+              <div>
+                <p className="text-body pl-9 md:pl-13.5 lg:max-w-3xl">
+                  {description}
+                </p>
+              </div>
+            )}
+          </div>
+        </>
+      }
+    />
   );
 }
 
