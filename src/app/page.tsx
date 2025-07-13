@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Dashboard from "./components/dashboard";
-import ArrowDownward from "./components/downwardArrow";
+import { ArrowDownIcon } from "@heroicons/react/24/solid";
 import About from "./components/about";
 import { CyclicTypewriter } from "./components/typewriter";
 import Timeline from "./components/timeline";
@@ -72,7 +72,7 @@ export default function HomePage() {
       {showWelcome && (
         <div className="absolute inset-0 flex items-center justify-center bg-custom z-20">
           <h1 className="text-6xl font-bold text-body welcome-text text-header">
-            <BasicTypewriter text="welcome" showCursor={false}/>
+            <BasicTypewriter text="welcome" showCursor={false} />
           </h1>
         </div>
       )}
@@ -91,10 +91,10 @@ export default function HomePage() {
                   <CyclicTypewriter />
 
                   <button
-                    className="arrow-down animate-bounce md:p-8 hidden md:block"
+                    className="arrow-down animate-bounce md:p-8 hidden md:block cursor-pointer"
                     onClick={goToAbout}
                   >
-                    <ArrowDownward />
+                    <ArrowDownIcon className="w-8 h-8 text-body" />
                   </button>
                 </div>
 

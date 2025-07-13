@@ -41,7 +41,7 @@ function TimelineItem({
               ) : (
                 <>
                   <ArrowRightIcon className="w-4 h-6 text-body" />
-                  <div className="flex flex-col items-start justify center px-4">
+                  <div className="flex flex-col items-start justify center px-4 cursor-pointer">
                     <h3 className="text-header text-xl timeline-item">
                       {title}
                     </h3>
@@ -65,7 +65,7 @@ function TimelineItem({
 }
 
 export default function Timeline() {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(3);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
 
   return (
     <div className="flex flex-col justify-center px-6 my-8">

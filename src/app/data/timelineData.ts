@@ -1,7 +1,12 @@
 const timelineData = [
     {
-        year: "2018 - 2022",
-        title: "BTech in Computer Science Engineering",
+        year: "2024 - 2026",
+        title: "MSc in Computer Science",
+        description: "Currently pursuing a Master's degree in Computer Science at the University of Amsterdam",
+    },
+    {
+        year: "2022 - 2024",
+        title: "Product Development Engineer",
         description: "Fill",
     },
     {
@@ -10,14 +15,9 @@ const timelineData = [
         description: "Fill",
     },
     {
-        year: "2022 - 2024",
-        title: "Product Development Engineer",
+        year: "2018 - 2022",
+        title: "BTech in Computer Science Engineering",
         description: "Fill",
-    },
-    {
-        year: "2024 - 2026",
-        title: "MSc in Computer Science",
-        description: "Currently pursuing a Master's degree in Computer Science at the University of Amsterdam",
     },
 ]
 
