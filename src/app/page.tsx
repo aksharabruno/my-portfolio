@@ -63,7 +63,6 @@ export default function HomePage() {
   useEffect(() => {
     const width = window.innerWidth;
     if (width <= 430) {
-      console.log("short");
       setIsSmallWindow(true);
     }
   }, []);

@@ -42,7 +42,7 @@ export const BasicTypewriter = ({ text = "", className = "" }) => {
   return (
     <span ref={elementRef} className={className}>
       {displayText}
-      {/*<span className="animate-pulse">|</span> unsure if I want this or not*/} 
+      <span className="animate-pulse">|</span>
     </span>
   );
 };

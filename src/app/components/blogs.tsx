@@ -31,14 +31,13 @@ function BlogItem({ title, excerpt, imageName }: BlogItemProps) {
 }
 
 export default function BlogGrid({ isSmallWindow }: any) {
-  console.log(window.innerWidth, isSmallWindow);
   return (
     <FadeUpElement
       children={
         <>
           <div className="flex flex-col md:flex-row bg-background m-8 p-6">
             {isSmallWindow ? (
-              <div className="text-center text-highlight md:text-right lg:text-5xl md:text-4xl mx-4 my-10">
+              <div className="text-center text-highlight text-xl mx-4 my-6">
                 <BasicTypewriter text="Here's what I'm thinking" />
               </div>
             ) : (
@@ -66,7 +65,7 @@ export default function BlogGrid({ isSmallWindow }: any) {
               )}
             </div>
             {!isSmallWindow ? (
-              <div className="text-center text-highlight md:text-right lg:text-5xl md:text-4xl mx-4 my-10">
+              <div className="text-center text-highlight text-right lg:text-5xl md:text-4xl mx-4 my-10">
                 <BasicTypewriter text="Here's what I'm thinking" />
               </div>
             ) : (

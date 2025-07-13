@@ -13,7 +13,6 @@ export default function About() {
               alt="Profile picture"
               width={300}
               height={300}
-              className="rounded-lg"
             />
             <h2 className="text-body text-center lg:text-left">
               Just an amateur embracing her interests.
