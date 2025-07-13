@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../globals.css";
 
-export const BasicTypewriter = ({ text = "", className = "" }) => {
+export const BasicTypewriter = ({
+  text = "",
+  className = "",
+  showCursor = true,
+}) => {
   const [displayText, setDisplayText] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef(null);
@@ -42,7 +46,7 @@ export const BasicTypewriter = ({ text = "", className = "" }) => {
   return (
     <span ref={elementRef} className={className}>
       {displayText}
-      <span className="animate-pulse">|</span>
+      {showCursor ? <span className="animate-pulse">|</span> : <></>}
     </span>
   );
 };

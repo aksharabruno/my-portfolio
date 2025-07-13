@@ -85,11 +85,6 @@ body {
   scale: 1.05;
 }
 
-.blogs-section-heading {
-  /*-webkit-text-stroke: 0.1px var(--color-highlight);
-  -webkit-text-fill-color: transparent;*/
-}
-
 .contact-email:hover {
   color: var(--color-hover);
 }

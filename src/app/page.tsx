@@ -72,7 +72,7 @@ export default function HomePage() {
       {showWelcome && (
         <div className="absolute inset-0 flex items-center justify-center bg-custom z-20">
           <h1 className="text-6xl font-bold text-body welcome-text text-header">
-            <BasicTypewriter text="welcome" />
+            <BasicTypewriter text="welcome" showCursor={false}/>
           </h1>
         </div>
       )}
