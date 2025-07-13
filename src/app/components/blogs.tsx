@@ -13,7 +13,7 @@ type BlogItemProps = {
 
 function BlogItem({ title, excerpt, imageName }: BlogItemProps) {
   return (
-    <div className="relative group overflow-hidden shadow-lg">
+    <div className="relative group overflow-hidden shadow-lg cursor-pointer">
       <Image
         src={imageName}
         alt={title}
