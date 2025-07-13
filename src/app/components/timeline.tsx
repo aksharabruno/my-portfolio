@@ -68,7 +68,7 @@ export default function Timeline() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
 
   return (
-    <div className="flex flex-col justify-center px-6 my-8">
+    <div className="flex flex-col justify-center px-6 md:m-8">
       <h1 className="text-xl text-body text-left py-6">
         <BasicTypewriter text="What have I been upto?" />
       </h1>

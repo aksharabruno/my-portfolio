@@ -1,32 +1,35 @@
-import { useState, useEffect } from "react";
 import blogPosts from "../data/blogPosts";
 import { FadeUpElement } from "./fadeUpElement";
 import { BasicTypewriter } from "./typewriter";
 import Image from "next/image";
+import Link from "next/link";
 
 type BlogItemProps = {
   id: number;
   title: string;
+  slug: string;
   excerpt: string;
   imageName: string;
 };
 
-function BlogItem({ title, excerpt, imageName }: BlogItemProps) {
+function BlogItem({ title, slug, excerpt, imageName }: BlogItemProps) {
   return (
-    <div className="relative group overflow-hidden shadow-lg cursor-pointer">
-      <Image
-        src={imageName}
-        alt={title}
-        className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-      />
+    <Link href={`/blog/${slug}`}>
+      <div className="relative group overflow-hidden shadow-lg cursor-pointer">
+        <Image
+          src={imageName}
+          alt={title}
+          className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
 
-      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-          <h3 className="text-header font-bold mb-2">{title}</h3>
-          <p className="text-body text-sm text-gray-200">{excerpt}</p>
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+            <h3 className="text-header font-bold mb-2">{title}</h3>
+            <p className="text-body text-sm text-gray-200">{excerpt}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -49,6 +52,7 @@ export default function BlogGrid({ isSmallWindow }: any) {
                   item: {
                     id: number;
                     title: string;
+                    slug: string;
                     excerpt: string;
                     imageName: any;
                   },
@@ -58,6 +62,7 @@ export default function BlogGrid({ isSmallWindow }: any) {
                     key={index}
                     id={item.id}
                     title={item.title}
+                    slug={item.slug}
                     excerpt={item.excerpt}
                     imageName={item.imageName}
                   />
