@@ -41,7 +41,7 @@ function TimelineItem({
               ) : (
                 <>
                   <ArrowRightIcon className="w-4 h-6 text-body" />
-                  <div className="flex flex-col items-start justify center px-4 cursor-pointer">
+                  <div className="flex flex-col items-start justify center px-4">
                     <h3 className="text-header text-xl timeline-item">
                       {title}
                     </h3>

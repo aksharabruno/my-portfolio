@@ -15,7 +15,7 @@ type BlogItemProps = {
 function BlogItem({ title, slug, excerpt, imageName }: BlogItemProps) {
   return (
     <Link href={`/blog/${slug}`}>
-      <div className="relative group overflow-hidden shadow-lg cursor-pointer">
+      <div className="relative group overflow-hidden shadow-lg">
         <Image
           src={imageName}
           alt={title}
