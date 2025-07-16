@@ -89,6 +89,24 @@ export default function Timeline() {
           />
         )
       )}
+      <FadeUpElement
+        children={
+          <>
+            <div className="flex items-center justify-center mt-4 mb-8 lg:max-w-3xl">
+              <span className="text-header">Download my resume here</span>
+              <span>
+                <a
+                  href="../files/Resume.pdf"
+                  download
+                  className="download-cv mx-4 px-6 py-2"
+                >
+                  Resume
+                </a>
+              </span>
+            </div>
+          </>
+        }
+      />
     </div>
   );
 }

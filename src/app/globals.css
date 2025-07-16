@@ -88,3 +88,8 @@ body {
 .contact-email:hover {
   color: var(--color-hover);
 }
+
+.download-cv {
+  color: var(--color-highlight);
+  border: 1px dashed var(--color-secondary);
+}
