@@ -9,7 +9,7 @@ const blogPosts = [
         slug: 'neural-networks',
         excerpt: 'Writer\'s block',
         imageName: blog1,
-        content: [`There’s something strangely terrifying about a blank page.\n\n
+        content: [`There’s something strangely terrifying about a blank page.
         It just sits there — empty, expectant, borderline smug — daring you to say something meaningful. 
         Or at least something coherent. And somehow, the more you stare at it, the more your brain decides now is a great time to think about literally anything else. Like whether cats understand time. Or if you accidentally left the fridge door slightly open. But here’s the thing I’m learning (and re-learning every time I open a new doc): the page doesn’t need perfection. It just needs presence. Some days, that presence looks like half-baked thoughts and too many metaphors. Other days, it’s a proper idea stitched into words that mostly make sense. But most of the time, it’s messy. And that’s fine. That’s writing. Whether it’s code or a blog post or a 2 a.m. journal entry, the hardest part is often just starting. Showing up. Typing one sentence, even if it’s bad. Especially if it’s bad. Because once the page isn’t blank anymore — you’ve already won.`]
     },
@@ -27,7 +27,7 @@ const blogPosts = [
             `Those mornings were special to me like how adding a tinge of cardamom is to tea. Sorry, off-topic. Just as how I keep diverting myself, Doodoo’s attention span was quite small. He comes to me for all the love. Nevertheless, the moment he witnesses dad eating biscuits, he doesn’t care if I exist anymore. He simply makes his way to dad, wagging his tail. Yes, Doodoo was an integral part of our lives. I do not know if the rest of my family will agree to this. However, I completely enjoyed all the good times.`,
             `Here, we reach the sad part of the story. He was only about a year and a half when he died. The gate was left open, he ran outside which no one noticed. He came back home bruised up. I guess he got into a dog fight. Seeing him pained was writhing. The vet couldn’t help much. The medicines were effect-less. Despite living only a short time, he is irreplaceable. And I think, secretly, mom loved him too, more than she would like to admit.`,
             `The one who is reading this now, please adopt a pet. May it be a dog or a cat or a fish or a hamster or a bird. For people who like to do “extra”, adopt a horse. Inculcate them into your lives and learn their tiniest quirks. The entire journey with them is wonderful. Perhaps these are everyday stories. Even so, I gather, experiences like these make oneself wholesome.`,
-            `In remembrance today, and always.`]
+            `To Doodoo,`, `In remembrance today, and always.`]
     },
     {
         id: 3,
