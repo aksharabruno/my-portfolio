@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import About from "../components/about";
 import Dot from "../components/animata/background/dot";
 import BlogGrid from "../components/blogs";
+import TempBlogSection from "../components/blogs";
 import Dashboard from "../components/dashboard";
 import Timeline from "../components/timeline";
 import { CyclicTypewriter } from "../components/typewriter";
@@ -55,7 +56,7 @@ export default function HomePage() {
             <About />
           </div>
           <Timeline />
-          <BlogGrid isSmallWindow={isSmallWindow} />
+
 
           <div id="contact">
             <Contact />

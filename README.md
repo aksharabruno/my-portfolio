@@ -116,4 +116,3 @@ Recommended: Vercel (first-class for Next.js)
 - This repo uses TypeScript and Next.js App Router. Keep route file names as `page.tsx`.
 - Keep common types in `src/types` or `types/` and add additional `.d.ts` files if you use third-party modules without types.
 
----
