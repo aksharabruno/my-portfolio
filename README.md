@@ -102,64 +102,6 @@ declare module "@heroicons/react/24/outline";
 
 ---
 
-## Common tasks & notes
-
-- Smooth scroll to sections: give a section an `id` (e.g. `id="about"`) and call:
-```ts
-document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-```
-
-- Center content vertically/horizontally (Tailwind):
-```jsx
-<div className="flex items-center justify-center min-h-screen">...</div>
-```
-
-- Show element only on large screens:
-```jsx
-<button className="hidden lg:block">...</button>
-```
-
-- 1px circular green border around an icon (Tailwind):
-```jsx
-<div className="flex items-center justify-center w-12 h-12 rounded-full border border-green-500">
-  <ArrowRightIcon className="w-6 h-6 text-green-500" />
-</div>
-```
-
----
-
-## Git / remote tips
-
-- If `git push origin main` fails because `origin` is missing:
-```bash
-git remote add origin <repo-url>
-git push -u origin main
-```
-
-- If push is rejected (non-fast-forward), rebase/pull then push:
-```bash
-git pull origin main --rebase
-# resolve conflicts, then
-git push origin main
-```
-
-- During merge conflicts in VS Code: accept the desired changes, save file, then:
-```bash
-git add README.md
-git commit   # or `git rebase --continue` if rebasing
-git push
-```
-
----
-
-## Troubleshooting
-
-- "could not determine executable to run": ensure you use `npm run dev` (not `npm dev`) and that `package.json` has a `dev` script.
-- Google Fonts not loading: use `next/font/google` for Next.js App Router or import the @import url in `globals.css` and set `body { font-family: ... }`.
-- If components don’t render side-by-side: verify parent has `flex` or `flex-row` and valid widths (Tailwind `w-1/2`, `w-full`, etc.).
-
----
-
 ## Deployment
 
 Recommended: Vercel (first-class for Next.js)
@@ -175,8 +117,3 @@ Recommended: Vercel (first-class for Next.js)
 - Keep common types in `src/types` or `types/` and add additional `.d.ts` files if you use third-party modules without types.
 
 ---
-
-If you want, I can:
-- Add a sample `package.json` scripts snippet
-- Add a `types/heroicons-react.d.ts` file for you
-- Scaffold a CONTRIBUTING.md or deployment workflow
