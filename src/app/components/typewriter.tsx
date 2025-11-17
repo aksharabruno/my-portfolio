@@ -54,7 +54,7 @@ export const BasicTypewriter = ({
 export function CyclicTypewriter() {
   const words = [
     "MSc Computer Science student",
-    "Frontend Developer",
+    "Software Engineer",
     "Volunteer",
     "Writer",
     "(bathroom) Singer :)",
