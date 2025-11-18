@@ -13,7 +13,7 @@ export default function WelcomePage() {
     }, 1700);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [router]);
 
   return (
     <div className="bg-custom">

@@ -65,7 +65,7 @@ function TimelineItem({
   );
 }
 
-export default function Timeline(isSmallWindow: boolean | any) {
+export default function Timeline() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
 
   return (

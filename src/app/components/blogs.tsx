@@ -37,7 +37,7 @@ function BlogItem({ title, slug, excerpt, imageName }: BlogItemProps) {
   );
 }
 
-export default function BlogGrid({ isSmallWindow }: any) {
+export default function BlogGrid(isSmallWindow: boolean | any) {
   return (
     <FadeUpElement
       children={

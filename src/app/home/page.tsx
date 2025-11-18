@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import About from "../components/about";
 import Dot from "../components/animata/background/dot";
-import BlogGrid from "../components/blogs";
-import TempBlogSection from "../components/blogs";
+//import BlogGrid from "../components/blogs";
 import Dashboard from "../components/dashboard";
 import Timeline from "../components/timeline";
 import { CyclicTypewriter } from "../components/typewriter";
@@ -12,7 +11,7 @@ import { ArrowDownIcon } from "@heroicons/react/24/solid";
 import Contact from "../components/contact";
 
 export default function HomePage() {
-  const [isSmallWindow, setIsSmallWindow] = useState(false);
+  //const [isSmallWindow, setIsSmallWindow] = useState(false);
 
   const goToAbout = () => {
     const aboutSection = document.getElementById("about");
@@ -24,13 +23,13 @@ export default function HomePage() {
     }
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     const width = window.innerWidth;
     if (width <= 430) {
       setIsSmallWindow(true);
       console.log("Small window detected");
     }
-  }, []);
+  }, []);*/
 
   return (
     <Dot

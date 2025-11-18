@@ -25,7 +25,7 @@ const TechStack = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-8">
         <div className="grid grid-cols-4 gap-8 place-items-center">
-          {technologies.map((tech, index) => (
+          {technologies.map((tech) => (
             <div
               key={tech.name}
               className="flex flex-col items-center gap-3 group cursor-pointer"
