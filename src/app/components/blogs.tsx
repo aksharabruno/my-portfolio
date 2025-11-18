@@ -1,7 +1,7 @@
 import blogPosts from "../data/blogPosts";
 import { FadeUpElement } from "./fadeUpElement";
 import { BasicTypewriter } from "./typewriter";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 type BlogItemProps = {
@@ -9,7 +9,7 @@ type BlogItemProps = {
   title: string;
   slug: string;
   excerpt: string;
-  imageName: string;
+  imageName: StaticImageData;
 };
 
 function BlogItem({ title, slug, excerpt, imageName }: BlogItemProps) {
@@ -33,7 +33,7 @@ function BlogItem({ title, slug, excerpt, imageName }: BlogItemProps) {
   );
 }
 
-export default function BlogGrid(isSmallWindow: boolean | any) {
+export default function BlogGrid(isSmallWindow: boolean) {
   return (
     <FadeUpElement>
       <>
@@ -53,7 +53,7 @@ export default function BlogGrid(isSmallWindow: boolean | any) {
                   title: string;
                   slug: string;
                   excerpt: string;
-                  imageName: any;
+                  imageName: StaticImageData;
                 },
                 index: number
               ) => (

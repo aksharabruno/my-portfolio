@@ -1,5 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
+type FadeUpElementProps = {
+  children: React.ReactNode;
+  delay?: number;
+  duration?: number;
+  distance?: number;
+  threshold?: number;
+  once?: boolean;
+}
+
 //custom hook for fade up animation on scroll
 const useFadeUpOnScroll = (
   threshold = 0.1,
@@ -43,7 +52,7 @@ export const FadeUpElement = ({
   distance = 50,
   threshold = 0.1,
   once = true,
-}: any) => {
+}: FadeUpElementProps) => {
   const [elementRef, isVisible] = useFadeUpOnScroll(threshold);
   const [hasAnimated, setHasAnimated] = useState(false);
   useEffect(() => {
