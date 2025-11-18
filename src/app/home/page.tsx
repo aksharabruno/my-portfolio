@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 import About from "../components/about";
 import Dot from "../components/animata/background/dot";
 //import BlogGrid from "../components/blogs";
@@ -32,36 +32,34 @@ export default function HomePage() {
   }, []);*/
 
   return (
-    <Dot
-      children={
-        <div className="fade-in-website w-full p-4">
-          <Dashboard />
+    <Dot>
+      <div className="fade-in-website w-full p-4">
+        <Dashboard />
 
-          <div className="h-[30vh] md:h-[90vh] lg:h-[90vh] flex flex-col items-center justify-center text-center">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl text-header home-content p-2">
-              Hey! I am Akshara Bruno
-            </h1>
+        <div className="h-[30vh] md:h-[90vh] lg:h-[90vh] flex flex-col items-center justify-center text-center">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl text-header home-content p-2">
+            Hey! I am Akshara Bruno
+          </h1>
 
-            <CyclicTypewriter />
+          <CyclicTypewriter />
 
-            <button
-              className="arrow-down animate-bounce md:p-8 hidden md:block cursor-pointer"
-              onClick={goToAbout}
-            >
-              <ArrowDownIcon className="w-8 h-8 text-body" />
-            </button>
-          </div>
-
-          <div id="about" className="items-center justify-center flex flex-col">
-            <About />
-          </div>
-          <Timeline />
-
-          <div id="contact">
-            <Contact />
-          </div>
+          <button
+            className="arrow-down animate-bounce md:p-8 hidden md:block cursor-pointer"
+            onClick={goToAbout}
+          >
+            <ArrowDownIcon className="w-8 h-8 text-body" />
+          </button>
         </div>
-      }
-    />
+
+        <div id="about" className="items-center justify-center flex flex-col">
+          <About />
+        </div>
+        <Timeline />
+
+        <div id="contact">
+          <Contact />
+        </div>
+      </div>
+    </Dot>
   );
 }

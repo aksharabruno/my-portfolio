@@ -12,14 +12,6 @@ type BlogItemProps = {
   imageName: string;
 };
 
-export function TempBlogSection() {
-  return (
-    <div>
-      Blogs are under construction. Will be here very soon. Terribly sorry :3
-    </div>
-  );
-}
-
 function BlogItem({ title, slug, excerpt, imageName }: BlogItemProps) {
   return (
     <Link href={`/blog/${slug}`}>

@@ -52,13 +52,6 @@ export const BasicTypewriter = ({
 };
 
 export function CyclicTypewriter() {
-  const words = [
-    "MSc Computer Science student",
-    "Software Engineer",
-    "Volunteer",
-    "Writer",
-    "(bathroom) Singer :)",
-  ];
   const prefix = "I am a ";
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -66,6 +59,13 @@ export function CyclicTypewriter() {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
+    const words = [
+      "MSc Computer Science student",
+      "Software Engineer",
+      "Volunteer",
+      "Writer",
+      "(bathroom) Singer :)",
+    ];
     const currentWord = words[currentWordIndex];
 
     const timeout = setTimeout(
@@ -89,7 +89,7 @@ export function CyclicTypewriter() {
     );
 
     return () => clearTimeout(timeout);
-  }, [currentText, isDeleting, currentWordIndex, words]);
+  }, [currentText, isDeleting, currentWordIndex]);
 
   return (
     <div className="text-xl ">
