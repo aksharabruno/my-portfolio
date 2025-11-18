@@ -4,6 +4,7 @@ import "../globals.css";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { BasicTypewriter } from "./typewriter";
 import { FadeUpElement } from "./fadeUpElement";
+import TechStack from "./techStack";
 
 type TimelineItemProps = {
   year: string | number;
@@ -64,49 +65,52 @@ function TimelineItem({
   );
 }
 
-export default function Timeline() {
+export default function Timeline(isSmallWindow: boolean | any) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
 
   return (
-    <div className="flex flex-col justify-center px-6 md:m-8">
-      <h1 className="text-xl text-body text-left py-6">
-        <BasicTypewriter text="What have I been upto?" />
-      </h1>
-      {timelineData.map(
-        (
-          item: { year: string; title: string; description: string },
-          index: number
-        ) => (
-          <TimelineItem
-            key={index}
-            year={item.year}
-            title={item.title}
-            description={item.description}
-            isSelected={selectedIndex === index}
-            onClick={() =>
-              setSelectedIndex(selectedIndex === index ? null : index)
-            }
-          />
-        )
-      )}
-      <FadeUpElement
-        children={
-          <>
-            <div className="flex items-center justify-center mt-4 mb-8 lg:max-w-3xl">
-              <span className="text-header">Download my resume here</span>
-              <span>
-                <a
-                  href="../files/Resume.pdf"
-                  download
-                  className="download-cv mx-4 px-6 py-2"
-                >
-                  Resume
-                </a>
-              </span>
-            </div>
-          </>
-        }
-      />
+    <div className="flex flex-row">
+      <div className="flex flex-col justify-center px-6 md:m-8 lg:max-w-3xl">
+        <h1 className="text-xl text-body text-left py-6">
+          <BasicTypewriter text="What have I been upto?" />
+        </h1>
+        {timelineData.map(
+          (
+            item: { year: string; title: string; description: string },
+            index: number
+          ) => (
+            <TimelineItem
+              key={index}
+              year={item.year}
+              title={item.title}
+              description={item.description}
+              isSelected={selectedIndex === index}
+              onClick={() =>
+                setSelectedIndex(selectedIndex === index ? null : index)
+              }
+            />
+          )
+        )}
+        <FadeUpElement
+          children={
+            <>
+              <div className="flex items-center justify-center mt-4 mb-8 lg:max-w-3xl">
+                <span className="text-header">Download my resume here</span>
+                <span>
+                  <a
+                    href="../files/Resume.pdf"
+                    download
+                    className="download-cv mx-4 px-6 py-2"
+                  >
+                    Resume
+                  </a>
+                </span>
+              </div>
+            </>
+          }
+        />
+      </div>
+      <TechStack />
     </div>
   );
 }

@@ -28,6 +28,7 @@ export default function HomePage() {
     const width = window.innerWidth;
     if (width <= 430) {
       setIsSmallWindow(true);
+      console.log("Small window detected");
     }
   }, []);
 
@@ -56,7 +57,6 @@ export default function HomePage() {
             <About />
           </div>
           <Timeline />
-
 
           <div id="contact">
             <Contact />
