@@ -93,7 +93,7 @@ export default function Timeline() {
               <span className="text-header">Download my resume here</span>
               <span>
                 <a
-                  href="../files/AksharaBruno_Resume.pdf"
+                  href="../files/Resume.pdf"
                   download
                   className="download-cv mx-4 px-6 py-2"
                 >
