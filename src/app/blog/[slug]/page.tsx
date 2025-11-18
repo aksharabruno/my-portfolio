@@ -23,8 +23,8 @@ export default async function BlogPost({
   }
 
   return (
-    <Dot
-      children={
+    <Dot>
+      <>
         <div className="fade-in-website p-4 min-h-[100vh]">
           <article className="max-w-4xl mx-auto p-6 my-12">
             <h1 className="text-4xl font-bold mb-8 text-highlight">
@@ -42,11 +42,12 @@ export default async function BlogPost({
               {blogPost.content.map((paragraph, index) => (
                 <p key={index} className="mb-4">
                   {paragraph}
-                </p>  ))}
+                </p>
+              ))}
             </div>
           </article>
         </div>
-      }
-    />
+      </>
+    </Dot>
   );
 }

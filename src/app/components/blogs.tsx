@@ -13,9 +13,13 @@ type BlogItemProps = {
 };
 
 export function TempBlogSection() {
-  return <div>Blogs are under construction. Will be here very soon. Terribly sorry :3</div>;
+  return (
+    <div>
+      Blogs are under construction. Will be here very soon. Terribly sorry :3
+    </div>
+  );
 }
-  
+
 function BlogItem({ title, slug, excerpt, imageName }: BlogItemProps) {
   return (
     <Link href={`/blog/${slug}`}>
@@ -39,50 +43,48 @@ function BlogItem({ title, slug, excerpt, imageName }: BlogItemProps) {
 
 export default function BlogGrid(isSmallWindow: boolean | any) {
   return (
-    <FadeUpElement
-      children={
-        <>
-          <div className="flex flex-col md:flex-row bg-background m-8 p-6">
-            {isSmallWindow ? (
-              <div className="text-center text-highlight text-xl mx-4 my-6">
-                <BasicTypewriter text="Here's what I'm thinking" />
-              </div>
-            ) : (
-              <></>
-            )}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:min-w-3/4">
-              {blogPosts.map(
-                (
-                  item: {
-                    id: number;
-                    title: string;
-                    slug: string;
-                    excerpt: string;
-                    imageName: any;
-                  },
-                  index: number
-                ) => (
-                  <BlogItem
-                    key={index}
-                    id={item.id}
-                    title={item.title}
-                    slug={item.slug}
-                    excerpt={item.excerpt}
-                    imageName={item.imageName}
-                  />
-                )
-              )}
+    <FadeUpElement>
+      <>
+        <div className="flex flex-col md:flex-row bg-background m-8 p-6">
+          {isSmallWindow ? (
+            <div className="text-center text-highlight text-xl mx-4 my-6">
+              <BasicTypewriter text="Here's what I'm thinking" />
             </div>
-            {!isSmallWindow ? (
-              <div className="text-center text-highlight text-right lg:text-5xl md:text-4xl mx-4 my-10">
-                <BasicTypewriter text="Here's what I'm thinking" />
-              </div>
-            ) : (
-              <></>
+          ) : (
+            <></>
+          )}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:min-w-3/4">
+            {blogPosts.map(
+              (
+                item: {
+                  id: number;
+                  title: string;
+                  slug: string;
+                  excerpt: string;
+                  imageName: any;
+                },
+                index: number
+              ) => (
+                <BlogItem
+                  key={index}
+                  id={item.id}
+                  title={item.title}
+                  slug={item.slug}
+                  excerpt={item.excerpt}
+                  imageName={item.imageName}
+                />
+              )
             )}
           </div>
-        </>
-      }
-    />
+          {!isSmallWindow ? (
+            <div className="text-center text-highlight text-right lg:text-5xl md:text-4xl mx-4 my-10">
+              <BasicTypewriter text="Here's what I'm thinking" />
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
+      </>
+    </FadeUpElement>
   );
 }
