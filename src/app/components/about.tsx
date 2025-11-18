@@ -22,10 +22,10 @@ export default function About() {
               on the other times its dramatic internal monologues fueled by my
               cry for caffeine. <br />
               I’m a Computer Science grad student specialising
-              in Software Engineering and Green IT — which means yes, I do a lot
+              in Software Engineering and Green IT, which means yes, I do a lot
               of academic deep dives, but I also believe creativity is a human
               necessity. <br />
-              And so, here I am — trying to make sense of the world, one blank
+              And so, here I am, trying to make sense of the world, one blank
               page and blinking cursor at a time.
             </p>
           </div>

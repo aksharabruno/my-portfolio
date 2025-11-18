@@ -98,7 +98,7 @@ export default function Timeline(isSmallWindow: boolean | any) {
                 <span className="text-header">Download my resume here</span>
                 <span>
                   <a
-                    href="../files/Resume.pdf"
+                    href="../files/AksharaBruno_Resume.pdf"
                     download
                     className="download-cv mx-4 px-6 py-2"
                   >
