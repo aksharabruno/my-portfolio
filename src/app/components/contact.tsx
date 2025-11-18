@@ -16,11 +16,10 @@ import phoneIcon from "../images/phone.svg";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
-  const emailID = myEmailID;
 
-  const copyToClipboard = async () => {
+  const copyToClipboard = async (info: string) => {
     try {
-      await navigator.clipboard.writeText(emailID);
+      await navigator.clipboard.writeText(info);
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);
     } catch (err) {
@@ -44,7 +43,7 @@ export default function Contact() {
             </div>
             <div
               className="font-bold text-header contact-email mt-2 text-2xl md:text-4xl"
-              onClick={copyToClipboard}
+              onClick={() => copyToClipboard(myEmailID)}
             >
               aksharabruno0119@gmail.com
             </div>
@@ -76,7 +75,7 @@ export default function Contact() {
                 src={phoneIcon}
                 alt="Reach out to me via Phone"
                 className="hover:scale-120 mx-2"
-                onClick={copyToClipboard} //incorrect implementation; fix this
+                onClick={() => copyToClipboard(myPhone)} //incorrect implementation; fix this
               />
             </div>
             <p className="text-header">designed & built by yours truly</p>

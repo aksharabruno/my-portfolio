@@ -18,7 +18,7 @@ export default function About() {
             <p className="text-body text-center md:text-left">
               Hi there! <br /> <br />
               Welcome to my little corner in the Internet. <br />
-              I’m Akshara, and I write "things". Sometimes that means code. And
+              I’m Akshara, and I write &rdquo;things&ldquo;. Sometimes that means code. And
               on the other times its dramatic internal monologues fueled by my
               cry for caffeine. <br />
               I’m a Computer Science grad student specialising

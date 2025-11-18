@@ -69,7 +69,7 @@ export default function Timeline(isSmallWindow: boolean | any) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
 
   return (
-    <div className="flex flex-row">
+    <div className="md:flex md:flex-row">
       <div className="flex flex-col justify-center px-6 md:m-8 lg:max-w-3xl">
         <h1 className="text-xl text-body text-left py-6">
           <BasicTypewriter text="What have I been upto?" />
@@ -96,7 +96,7 @@ export default function Timeline(isSmallWindow: boolean | any) {
             <>
               <div className="flex items-center justify-center mt-4 mb-8 lg:max-w-3xl">
                 <span className="text-header">Download my resume here</span>
-                <span>
+                <span>  
                   <a
                     href="../files/AksharaBruno_Resume.pdf"
                     download
